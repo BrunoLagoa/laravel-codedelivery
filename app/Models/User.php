@@ -16,6 +16,11 @@ class User extends Model implements AuthenticatableContract,
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
+    public function client()
+    {
+        return $this->hasOne(Client::class);
+    }
+
     /**
      * The database table used by the model.
      *

@@ -2,14 +2,18 @@
 
 namespace CodeDelivery\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use CodeDelivery\Http\Requests;
-use CodeDelivery\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
-    public function index() {
-       return view('admin.categories.index');
+    public function index()
+    {
+        $nome = "Bruno Castro";
+        $linguagens = [
+            'PHP',
+            'JAVA',
+            'PYTHON'
+        ];
+        return view('admin.categories.index',compact('nome','linguagens'));
     }
 }

@@ -7,7 +7,7 @@
 
     <a href="#" class="btn btn-default">Nova Categoria</a>
     <br /><br />
-    
+
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -26,6 +26,9 @@
         @endforeach
         </tbody>
     </table>
+
+    {!! $categories->render() !!}
+
 </div>
 
 @endsection

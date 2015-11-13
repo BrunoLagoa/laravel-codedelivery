@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Bestmomo\Scafold\ScafoldServiceProvider::class,
 
         /*
          * Application Service Providers...

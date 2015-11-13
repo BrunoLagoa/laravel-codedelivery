@@ -17,9 +17,8 @@ Route::get('/', function () {
 
 
 Route::get('/test', function () {
-
     $repository = app()->make('CodeDelivery\Repositories\CategoryRepository');
-
     return $repository->all();
-
 });
+
+Route::get('admin/categories', 'CategoriesController@index');

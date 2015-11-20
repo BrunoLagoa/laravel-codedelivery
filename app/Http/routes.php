@@ -32,3 +32,4 @@ Route::get('admin/products/create',['as'=> 'admin.products.create','uses' => 'Pr
 Route::get('admin/products/edit/{id}',['as'=> 'admin.products.edit','uses' => 'ProductsController@edit']);
 Route::post('admin/products/update/{id}',['as'=> 'admin.products.update','uses' => 'ProductsController@update']);
 Route::post('admin/products/store',['as'=> 'admin.products.store','uses' => 'ProductsController@store']);
+Route::get('admin/products/destroy/{id}',['as'=> 'admin.products.destroy','uses' => 'ProductsController@destroy']);

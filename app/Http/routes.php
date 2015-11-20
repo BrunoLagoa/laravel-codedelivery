@@ -21,7 +21,7 @@ Route::get('/test', function () {
     return $repository->all();
 });
 
-Route::group(['prefix'=>'admin', 'as'=>'admin.'], function(){
+Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole', 'as'=>'admin.'], function(){
     Route::get('categories',['as'=> 'categories.index','uses' => 'CategoriesController@index']);
     Route::get('categories/create',['as'=> 'categories.create','uses' => 'CategoriesController@create']);
     Route::get('categories/edit/{id}',['as'=> 'categories.edit','uses' => 'CategoriesController@edit']);

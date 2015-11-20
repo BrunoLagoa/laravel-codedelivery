@@ -31,7 +31,7 @@ class RepositoryServiceProvider extends ServiceProvider
             'CodeDelivery\Repositories\OrderItemRepositoryEloquent'
         );
         $this->app->bind(
-            'CodeDelivery\RepositoriesProductRepository',
+            'CodeDelivery\Repositories\ProductRepository',
             'CodeDelivery\Repositories\ProductRepositoryEloquent'
         );
         $this->app->bind(

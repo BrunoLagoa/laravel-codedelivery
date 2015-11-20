@@ -18,4 +18,9 @@ class CategoriesController extends Controller
     {
         return view('admin.categories.create');
     }
+
+    public function store()
+    {
+
+    }
 }

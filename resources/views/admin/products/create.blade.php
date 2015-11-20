@@ -3,18 +3,18 @@
 @section('content')
 
 <div class="container">
-    <h3>Nova Categorias</h3>
+    <h3>Nova Produto</h3>
 
     <!-- Errors -->
     @include('errors._check')
 
-    {!! Form::open(['route'=>'admin.categories.store']) !!}
+    {!! Form::open(['route'=>'admin.products.store']) !!}
 
     <!-- Form Input -->
-    @include('admin.categories._form')
+    @include('admin.products._form')
 
     <div class="form-group">
-        {!! Form::submit('Criar Categoria',['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Criar Produto',['class'=>'btn btn-primary']) !!}
     </div>
 
     {!! Form::close() !!}

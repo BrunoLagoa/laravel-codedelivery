@@ -33,7 +33,8 @@ class ProductsController extends Controller
 
     public function create()
     {
-        return view('admin.categories.create');
+        $categories = $this->categoryRepository->lists();
+        return view('admin.products.create', compact('categories'));
     }
 
     public function store(AdminProductRequest $request)
@@ -41,7 +42,7 @@ class ProductsController extends Controller
         $data = $request->all();
         $this->repository->create($data);
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function edit($id)

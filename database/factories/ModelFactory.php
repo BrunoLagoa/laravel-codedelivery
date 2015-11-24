@@ -34,6 +34,20 @@ $factory->define(CodeDelivery\Models\Product::class, function (Faker\Generator $
     ];
 });
 
+$factory->define(CodeDelivery\Models\Order::class, function (Faker\Generator $faker) {
+    return [
+        'client_id' => rand(1,10),
+        'total' => rand(50,100),
+        'status' => 0
+    ];
+});
+
+$factory->define(CodeDelivery\Models\OrderItem::class, function (Faker\Generator $faker) {
+    return [
+
+    ];
+});
+
 $factory->define(CodeDelivery\Models\Client::class, function (Faker\Generator $faker) {
     return [
         'phone' => $faker->phoneNumber,

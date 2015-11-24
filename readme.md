@@ -11,7 +11,14 @@
 ## laravel-codedelivery
 Curso Laravel 5.1 + Ionic + Cordova - Code Education [Laravel 5.1 + ionic + cordova](http://sites.code.education/laravel-ionic-cordova/)
 
-## Fase 1 do Projeto Laravel 5.1 + Ionic + Cordova
+## Fase 1 do Projeto Laravel 5.1 + Ionic + Cordova - Área Administrativa
+
+Agora que você já possui uma base para trabalharmos em nossa área administrativa, faça:
+
+- Crie uma administração de Clientes (CRUD)
+- Crie uma área de gerenciamento de pedidos (Listagem dos pedidos (e itens), edição de status e atribuição do entregador)
+
+
 
 ------------------------------------------------------------------------------------------
 [Bruno Castro](http://www.bhzautomacao.com.br) - Development

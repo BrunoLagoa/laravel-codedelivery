@@ -38,7 +38,7 @@
                         @endif
                     </td>
                     <td>{{ $order->status }}</td>
-                    <td><a href="" class="btn btn-default btn-sm">Editar</a></td>
+                    <td><a href="{{route('admin.orders.edit', ['id'=>$order->id])}}" class="btn btn-default btn-sm">Editar</a></td>
                 </tr>
             @endforeach
             </tbody>

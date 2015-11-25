@@ -50,5 +50,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole', 'as'=>'admin.']
     Route::post('cupoms/update/{id}',['as'=> 'cupoms.update','uses' => 'CupomsController@update']);
     Route::post('cupoms/store',['as'=> 'produccupoms','uses' => 'CupomsController@store']);
     Route::get('cupoms/destroy/{id}',['as'=> 'cupoms.destroy','uses' => 'CupomsController@destroy']);
+});
 
+Route::group(['prefix'=>'customer', 'as'=>'customer.'], function(){
+    Route::get('order/create',['as'=> 'order.create','uses' => 'CheckoutController@create']);
 });

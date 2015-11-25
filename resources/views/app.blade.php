@@ -34,11 +34,17 @@
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
-					<li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
-					<li><a href="{{ route('admin.products.index') }}">Produtos</a></li>
-					<li><a href="{{ route('admin.clients.index') }}">Clientes</a></li>
-					<li><a href="{{ route('admin.cupoms.index') }}">Cupoms</a></li>
-					<li><a href="{{ route('admin.orders.index') }}">Pedidos</a></li>
+					@if(Auth::user())
+						@if(Auth::user()->role == 'admin')
+							<li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
+							<li><a href="{{ route('admin.products.index') }}">Produtos</a></li>
+							<li><a href="{{ route('admin.clients.index') }}">Clientes</a></li>
+							<li><a href="{{ route('admin.cupoms.index') }}">Cupoms</a></li>
+							<li><a href="{{ route('admin.orders.index') }}">Pedidos</a></li>
+						@elseif(Auth::user()->role == 'client')
+							<li><a href="{{ route('customer.order.index') }}">Meus Pedidos</a></li>
+						@endif
+					@endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

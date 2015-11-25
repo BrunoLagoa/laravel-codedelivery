@@ -15,12 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('welcome');
+});
+
 Route::get('/test', function () {
     $repository = app()->make('CodeDelivery\Repositories\CategoryRepository');
     return $repository->all();
 });
 
-Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole', 'as'=>'admin.'], function(){
+Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole:admin', 'as'=>'admin.'], function(){
     Route::get('categories',['as'=> 'categories.index','uses' => 'CategoriesController@index']);
     Route::get('categories/create',['as'=> 'categories.create','uses' => 'CategoriesController@create']);
     Route::get('categories/edit/{id}',['as'=> 'categories.edit','uses' => 'CategoriesController@edit']);
@@ -52,7 +56,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole', 'as'=>'admin.']
     Route::get('cupoms/destroy/{id}',['as'=> 'cupoms.destroy','uses' => 'CupomsController@destroy']);
 });
 
-Route::group(['prefix'=>'customer', 'as'=>'customer.'], function(){
+Route::group(['prefix'=>'customer', 'middleware'=>'auth.checkrole:client', 'as'=>'customer.'], function(){
     Route::get('order',['as'=> 'order.index','uses' => 'CheckoutController@index']);
     Route::get('order/create',['as'=> 'order.create','uses' => 'CheckoutController@create']);
     Route::post('order/store',['as'=> 'order.store','uses' => 'CheckoutController@store']);

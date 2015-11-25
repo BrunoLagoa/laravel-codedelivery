@@ -47,6 +47,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole', 'as'=>'admin.']
     Route::get('cupoms',['as'=> 'cupoms.index','uses' => 'CupomsController@index']);
     Route::get('cupoms/create',['as'=> 'cupoms.create','uses' => 'CupomsController@create']);
     Route::get('cupoms/edit/{id}',['as'=> 'cupoms.edit','uses' => 'CupomsController@edit']);
-    Route::post('cupoms/store',['as'=> 'cupoms.store','uses' => 'CupomsController@store']);
+    Route::post('cupoms/update/{id}',['as'=> 'cupoms.update','uses' => 'CupomsController@update']);
+    Route::post('cupoms/store',['as'=> 'produccupoms','uses' => 'CupomsController@store']);
+    Route::get('cupoms/destroy/{id}',['as'=> 'cupoms.destroy','uses' => 'CupomsController@destroy']);
 
 });

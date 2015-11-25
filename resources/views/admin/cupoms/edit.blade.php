@@ -3,18 +3,18 @@
 @section('content')
 
 <div class="container">
-    <h3>Editando Categoria: {{ $category->name }}</h3>
+    <h3>Editando Cupom: {{ $cupom->code }}</h3>
 
     <!-- Errors -->
     @include('errors._check')
 
-    {!! Form::model($category,['route'=>['admin.categories.update', $category->id]]) !!}
+    {!! Form::model($cupom,['route'=>['admin.cupoms.update', $cupom->id]]) !!}
 
     <!-- Form Input -->
-    @include('admin.categories._form')
+    @include('admin.cupoms._form')
 
     <div class="form-group">
-        {!! Form::submit('Salvar Categoria',['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Salvar Cupom',['class'=>'btn btn-primary']) !!}
     </div>
 
     {!! Form::close() !!}

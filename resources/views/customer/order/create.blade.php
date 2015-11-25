@@ -11,9 +11,10 @@
 
             <div class="form-group">
                 <label>Total:</label>
+
                 <p id="total"></p>
                 <a href="#" id="btnNewItem" class="btn btn-success">Novo Item</a>
-                <br /> <br />
+                <br/> <br/>
 
                 <table class="table table-bordered">
                     <thead>
@@ -27,7 +28,8 @@
                         <td>
                             <select name="items[0][product_id]" class="form-control">
                                 @foreach($products as $p)
-                                    <option value="{{$p->id}}" data-price="{{$p->price}}">{{$p->name}} --- {{$p->price}}</option>
+                                    <option value="{{$p->id}}" data-price="{{$p->price}}">{{$p->name}}
+                                        --- {{$p->price}}</option>
                                 @endforeach
                             </select>
                         </td>
@@ -47,12 +49,12 @@
 
 @section('post-script')
     <script>
-        $('#btnNewItem').click(function(){
-           var row = $('table tbody > tr:last'),
-                   newRow = row.clone(),
-                   length = $("table tbody tr").length;
+        $('#btnNewItem').click(function () {
+            var row = $('table tbody > tr:last'),
+                    newRow = row.clone(),
+                    length = $("table tbody tr").length;
 
-            newRow.find('td').each(function(){
+            newRow.find('td').each(function () {
                 var td = $(this),
                         input = td.find('input,select'),
                         name = input.attr('name');
@@ -62,6 +64,28 @@
 
             newRow.find('input').val(1);
             newRow.insertAfter(row);
+            calculateTotal();
         });
+
+        $(document.body).on('click','select', function(){
+            calculateTotal();
+        });
+
+        $('input[name*=qtd]').blur(function(){
+            calculateTotal();
+        });
+
+        function calculateTotal() {
+            var total = 0,
+                    trlen = $('table tbody tr').length,
+                    tr = null, price, qtd;
+            for (var i = 0; i < trlen; i++) {
+                tr = $('table tbody tr').eq(i);
+                price = tr.find(':selected').data('price');
+                qtd = tr.find('input').val();
+                total += price * qtd;
+            }
+            $('#total').html(total);
+        }
     </script>
 @endsection

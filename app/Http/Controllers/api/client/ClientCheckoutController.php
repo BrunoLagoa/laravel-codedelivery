@@ -10,6 +10,7 @@ use CodeDelivery\Repositories\UserRepository;
 use CodeDelivery\Services\OrderService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use LucaDegasperi\OAuth2Server\Facades\Authorizer;
 
 class ClientCheckoutController extends Controller
 {
@@ -40,12 +41,13 @@ class ClientCheckoutController extends Controller
 
     public function index()
     {
-        $clientId = $this->userRepository->find(Auth::user()->id)->client->id;
-        $orders = $this->repository->scopeQuery(function($query) use ($clientId){
+        $id = Authorizer::getResourceOwnerId();
+        $clientId = $this->userRepository->find($id)->client->id;
+        $orders = $this->repository->with('items')->scopeQuery(function($query) use ($clientId){
             return $query->where('client_id','=',$clientId);
         })->paginate();
 
-        return view('customer.order.index', compact('orders'));
+        return $orders;
 
     }
 

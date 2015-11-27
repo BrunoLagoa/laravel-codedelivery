@@ -28,7 +28,7 @@ class OAuthCheckRole
     public function handle($request, Closure $next, $role)
     {
         $id = Authorizer::getResourceOwnerId();
-        $user = $this->UserRepository->find($id);
+        $user = $this->userRepository->find($id);
 
         if($user->role != $role){
             abort(403, 'Access for bidden');

@@ -69,6 +69,27 @@ Route::post('oauth/access_token', function() {
 Route::group(['prefix'=>'api', 'middleware'=>'oauth', 'as'=>'api.'], function(){
 
     Route::group(['prefix'=>'client', 'middleware'=>'oauth.checkrole:client', 'as'=>'client.'], function(){
+
+        Route::get('order',function(){
+            return ['pegando dados'];
+        });
+
+        Route::post('order',function(){
+            return ['criando dados'];
+        });
+
+        Route::put('order',function(){
+            return ['atualizando dados enteiros'];
+        });
+
+        Route::patch('order',function(){
+            return ['atualizando dados parcialmente'];
+        });
+
+        Route::delete('order',function(){
+            return ['excluindo dados'];
+        });
+
         Route::get('pedidos',function(){
             return [
                 'id' => 1,

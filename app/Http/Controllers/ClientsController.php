@@ -48,7 +48,7 @@ class ClientsController extends Controller
     {
         $client = $this->repository->find($id);
 
-        return view('admin.clients.edit', compact('client'));
+        return view('admin.clients.edit', compact('Client'));
     }
 
     public function update(AdminClientRequest $request, $id)

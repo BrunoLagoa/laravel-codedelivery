@@ -30,7 +30,7 @@ class CreateOauthSessionsTable extends Migration
         Schema::create('oauth_sessions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('client_id', 40);
-            $table->enum('owner_type', ['client', 'user'])->default('user');
+            $table->enum('owner_type', ['Client', 'user'])->default('user');
             $table->string('owner_id');
             $table->string('client_redirect_uri')->nullable();
             $table->timestamps();

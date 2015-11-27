@@ -63,7 +63,11 @@ class ClientCheckoutController extends Controller
         return $o;
     }
 
-    public function show(){
-        return ['minha order'];
+    public function show($id){
+        $o = $this->repository->with(['client','items','cupom'])->find($id);
+        $o->items->each(function($item){
+            $item->product;
+        });
+        return $o;
     }
 }

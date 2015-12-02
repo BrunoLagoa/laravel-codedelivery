@@ -59,7 +59,7 @@ class ClientCheckoutController extends Controller
     }
 
     public function show($id){
-        $o = $this->repositorys->with(['client','items','cupom'])->find($id);
+        $o = $this->repository->with(['client','items','cupom'])->find($id);
         /*
         $o->items->each(function($item){
             $item->product;

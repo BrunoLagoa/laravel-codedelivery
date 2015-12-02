@@ -2,8 +2,8 @@
 
 namespace CodeDelivery\Transformers;
 
-use League\Fractal\TransformerAbstract;
 use CodeDelivery\Models\Order;
+use League\Fractal\TransformerAbstract;
 
 /**
  * Class OrderTransformer
@@ -11,7 +11,7 @@ use CodeDelivery\Models\Order;
  */
 class OrderTransformer extends TransformerAbstract
 {
-    protected $defaultIncludes = ['cupom'];
+    protected $availableIncludes = ['cupom', 'items'];
 
     /**
      * Transform the \Order entity
@@ -19,10 +19,11 @@ class OrderTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform(Order $model) {
+    public function transform(Order $model)
+    {
         return [
-            'id'         => (int)$model->id,
-            'total'      => (float)$model->total,
+            'id' => (int)$model->id,
+            'total' => (float)$model->total,
             /* place your other model properties here */
 
             'created_at' => $model->created_at,
@@ -32,9 +33,14 @@ class OrderTransformer extends TransformerAbstract
 
     public function includeCupom(Order $model)
     {
-        if(!$model->cupom){
+        if (!$model->cupom) {
             return null;
         }
         return $this->item($model->cupom, new CupomTransformer());
+    }
+
+    public function includeItems(Order $model)
+    {
+        return $this->collection($model->items, new OrderItemTransformer());
     }
 }

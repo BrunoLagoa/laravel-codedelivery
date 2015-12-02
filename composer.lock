@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc5e5cd03cd1a43d8159d2009906d455",
-    "content-hash": "2f12fef27255446c1d7cdb617e1cfd47",
+    "hash": "5ba3cb54b161b1b9dcfa78971d6becaf",
+    "content-hash": "4a5164ccaaebc84c537c47483a283177",
     "packages": [
         {
             "name": "bestmomo/scafold",
@@ -714,6 +714,69 @@
             "time": "2015-09-30 22:26:59"
         },
         {
+            "name": "league/fractal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/fractal.git",
+                "reference": "84cb4d3a96b0f8465caf113690c3470fa11f2b36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/84cb4d3a96b0f8465caf113690c3470fa11f2b36",
+                "reference": "84cb4d3a96b0f8465caf113690c3470fa11f2b36",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "illuminate/contracts": "~5.0",
+                "mockery/mockery": "~0.9",
+                "pagerfanta/pagerfanta": "~1.0.0",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5",
+                "zendframework/zend-paginator": "~2.3"
+            },
+            "suggest": {
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for API output.",
+            "homepage": "http://fractal.thephpleague.com/",
+            "keywords": [
+                "api",
+                "json",
+                "league",
+                "rest"
+            ],
+            "time": "2015-11-15 10:48:33"
+        },
+        {
             "name": "league/oauth2-server",
             "version": "4.1.4",
             "source": {
@@ -1107,16 +1170,16 @@
         },
         {
             "name": "prettus/l5-repository",
-            "version": "2.1.5",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andersao/l5-repository.git",
-                "reference": "52395432b6df51d0e7c3de281198ad86d2975c6f"
+                "reference": "7de07b2e183322adf88a6dca38bcfe7f8fe82b08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/52395432b6df51d0e7c3de281198ad86d2975c6f",
-                "reference": "52395432b6df51d0e7c3de281198ad86d2975c6f",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/7de07b2e183322adf88a6dca38bcfe7f8fe82b08",
+                "reference": "7de07b2e183322adf88a6dca38bcfe7f8fe82b08",
                 "shasum": ""
             },
             "require": {
@@ -1163,7 +1226,7 @@
                 "model",
                 "repository"
             ],
-            "time": "2015-09-11 11:26:57"
+            "time": "2015-08-06 17:10:49"
         },
         {
             "name": "psr/log",

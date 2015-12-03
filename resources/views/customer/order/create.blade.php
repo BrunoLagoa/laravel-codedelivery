@@ -71,7 +71,7 @@
             calculateTotal();
         });
 
-        $(document.body).on('click','select', function(){
+        $(document.body).on('blur','input', function() {
             calculateTotal();
         });
 

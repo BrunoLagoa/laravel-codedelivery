@@ -35,10 +35,17 @@
       <ion-content class="padding has-subheader">
 
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Corporis dolor, laborum! Amet dolore esse officiis omnis quae quisquam, reprehenderit.
-          Aliquid commodi consequatur eligendi minus modi necessitatibus nemo quisquam rerum sit.
-        </p>
+        <ion-list show-delete="true">
+          <ion-item>
+            <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+            Meu item 1
+          </ion-item>
+          <ion-item>
+            <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+            Meu item 2
+          </ion-item>
+        </ion-list>
+
         <a href="javascript:void(0)" class="button button-assertive button-block ion-fork icon-left">Meu primeiro botão</a>
         <div class="button ion-checkmark icon-left">Meu botão com div</div>
         <button class="button button-positive button-small">Meu botão pequeno</button>
@@ -55,7 +62,6 @@
 
       </ion-content>
       <ion-tabs class="tabs-positive tabs-icon-top">
-
         <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
           <!-- Tab 1 content -->
         </ion-tab>
@@ -67,7 +73,6 @@
         <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
           <!-- Tab 3 content -->
         </ion-tab>
-
       </ion-tabs>
 
 

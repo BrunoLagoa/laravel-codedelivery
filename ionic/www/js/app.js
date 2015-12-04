@@ -23,7 +23,8 @@ angular.module('starter', [
         OAuthProvider.configure({
             baseUrl: 'https://localhost:8000',
             clientId: 'appid01',
-            clientSecret: 'secret' // optional
+            clientSecret: 'secret', // optional
+            grantPath: '/oauth/access_token'
         });
 
         OAuthTokenProvider.configure({

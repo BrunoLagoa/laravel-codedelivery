@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
-    .controller('LoginCtrl', ['$scope', 'OAuth', function ($scope, OAuth) {
+    .controller('LoginCtrl', [
+        '$scope', 'OAuth', '$cookies', function ($scope, OAuth, $cookies) {
 
         $scope.user = {
             username: '',
@@ -10,7 +11,8 @@ angular.module('starter.controllers', [])
             OAuth.getAccessToken($scope.user)
                 .then(function (data) {
                     // success
-                    console.log('Login Funcionando');
+                    console.log(data);
+                    console.log($cookies.getObject('token'));
                 }, function (responseError) {
                     // failed
                 });

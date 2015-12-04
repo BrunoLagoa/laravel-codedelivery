@@ -19,7 +19,20 @@ angular.module('starter', [
             }
         });
     })
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider) {
+        OAuthProvider.configure({
+            baseUrl: 'https://localhost:8000',
+            clientId: 'appid01',
+            clientSecret: 'secret' // optional
+        });
+
+        OAuthTokenProvider.configure({
+            name: 'token',
+            options: {
+                secure: false
+            }
+        });
+
         $stateProvider
             .state('home',{
                 url: '/home/:nome',

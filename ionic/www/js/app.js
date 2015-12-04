@@ -17,7 +17,7 @@ angular.module('starter', ['ionic'])
             }
         });
     })
-    .config(function($stateProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home',{
                 url: '/home',
@@ -43,4 +43,5 @@ angular.module('starter', ['ionic'])
                 url: '/b',
                 templateUrl: 'templates/main-b.html'
             })
+        $urlRouterProvider.otherwise('/');
     });

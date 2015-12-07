@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
     .controller('LoginCtrl', [
-        '$scope', 'OAuth', '$cookies', '$ionicPopup', function ($scope, OAuth, $cookies, $ionicPopup) {
+        '$scope', 'OAuth', '$ionicPopup','$state', function ($scope, OAuth, $ionicPopup, $state) {
 
         $scope.user = {
             username: '',
@@ -11,8 +11,7 @@ angular.module('starter.controllers', [])
             OAuth.getAccessToken($scope.user)
                 .then(function (data) {
                     // success
-                    console.log(data);
-                    console.log($cookies.getObject('token'));
+                    $state.go('home');
                 }, function (responseError) {
                     // failed
                     $ionicPopup.alert({

@@ -7,6 +7,7 @@ angular.module('starter', [
         'ionic', 'starter.controllers', 'angular-oauth2'
     ])
     
+
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

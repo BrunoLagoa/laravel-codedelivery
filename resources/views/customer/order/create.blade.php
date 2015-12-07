@@ -74,6 +74,9 @@
         $(document.body).on('blur','input', function() {
             calculateTotal();
         });
+        $(document.body).on('click','select', function() {
+            calculateTotal();
+        });
 
         $('input[name*=qtd]').blur(function(){
             calculateTotal();

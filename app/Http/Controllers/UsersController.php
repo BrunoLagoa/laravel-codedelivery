@@ -15,17 +15,17 @@ class UsersController extends Controller
     /**
      * @var UserRepository
      */
-    private $repository;
+    private $userRepository;
 
-    public function __construct(UserRepository $repository)
+    public function __construct(UserRepository $userRepository)
     {
-        $this->repository = $repository;
+        $this->userRepository = $userRepository;
     }
     public function authenticated()
     {
         $id = Authorizer::getResourceOwnerId();
-        $user = $this->repository->find($id);
-        return $user;
+        $userId = $this->userRepository->with('client')->find($id);
+        return $userId;
     }
 
     /**

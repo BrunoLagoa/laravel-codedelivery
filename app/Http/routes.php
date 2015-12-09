@@ -68,6 +68,7 @@ Route::group(['middleware'=>'cors'], function(){
     });
 
     Route::group(['prefix'=>'api', 'middleware'=>'oauth', 'as'=>'api.'], function(){
+        Route::get('authenticated',['as'=> 'authenticated','uses' => 'UsersController@authenticated']);
 
         Route::group(['prefix'=>'client', 'middleware'=>'oauth.checkrole:client', 'as'=>'client.'], function(){
             Route::resource('order','Api\Client\ClientCheckoutController', ['except'=>['create','edit','destroy']]);

@@ -33,6 +33,14 @@ Crie também um seeder com nome OAuthClientSeeder. Este seeder deve criar um reg
 * app: Minha App Mobile
 * created_at e updated_at com a data atual.
 
+## Fase 4 do Projeto Laravel 5.1 + Ionic + Cordova - Criando API de client
+
+Agora que já criamos a API que o client usará no aplicativo mobile, você deve reproduzir o mesmo e ainda criar um endpoint com a rota api/authenticated que retornará os dados do usuário autenticado.
+
+Para não mostrar o password na serialização, use na entidade User:
+
+* protected $hidden = ['password'];
+
 
 
 ------------------------------------------------------------------------------------------

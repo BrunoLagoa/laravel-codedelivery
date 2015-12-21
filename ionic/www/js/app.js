@@ -6,7 +6,7 @@
 angular.module('starter.controllers', []);
 
 angular.module('starter', [
-        'ionic', 'starter.controllers', 'angular-oauth2'
+        'ionic', 'starter.controllers', 'angular-oauth2', 'ngResource'
     ])
 
     .constant('appConfig',{

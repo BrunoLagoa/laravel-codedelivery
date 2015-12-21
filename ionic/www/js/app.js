@@ -57,7 +57,7 @@ angular.module('starter', [
             .state('client', {
                 abstract: true,
                 url: '/client',
-                template: '<ui-view/>'
+                template: '<ion-nav-view/>'
             })
             .state('client.checkout', {
                 url: '/checkout',

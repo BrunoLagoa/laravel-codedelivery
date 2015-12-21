@@ -41,6 +41,33 @@ Para não mostrar o password na serialização, use na entidade User:
 
 * protected $hidden = ['password'];
 
+## Fase 5 do Projeto Laravel 5.1 + Ionic + Cordova - Trabalhando com validações e presenters
+
+Nesta fase você terá que fazer um OrderTransformer semelhante ao que fizemos nas aulas.
+ - Na order teremos os seguintes dados:
+
+ * total, status e created
+
+ Todos relacionamentos serão atribuídos como "availableIncludes", então teremos:
+
+  * items (OrderItemTransformer)
+  * cupom (CupomTransformer), dados: code
+  * client (ClientTransformer), dados: name, email, phone, address, zipcode, city, state
+  * deliveryman (DeliverymanTransformer), dados: id, name, email
+
+ - Para o OrderItemTransformer, teremos:
+
+  price, qtd,
+  
+  O relacionamento com product deve ser atribuído com "defaultIncludes" e deve
+  retornar o id, o name e o price do product
+
+ - No endpoint de retorno do usuário autenticado devemos usar o UserTransformer que será responsável por retornar:
+
+ * id, name, email e role
+
+Atribua o UserTransformer ao UserRepositoryEloquent. Faça a validação que fizemos para o cadastro de Order
+
 
 
 ------------------------------------------------------------------------------------------
